@@ -1,0 +1,61 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background: linear-gradient(to right, #207dac, #adadad);
+
+    
+}
+.calculator-grid{
+  
+    display: grid;      /*buttonska dhan wuu isa hoos dhigaa  */
+    margin-top: 2rem;
+
+    grid-template-columns: repeat(4, 6rem);  /*halkii sadarbo 4 button kusoo muuji, canbrkooduna yaay 6rem... */
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+
+    justify-content: center;
+}
+.calculator-grid >button
+{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+}
+.calculator-grid >button:hover,
+.calculator-grid >button:focus
+{
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two{
+    grid-column:  span 2;   /*meelaha banaan ayaa lagu dhameestiraa = iyo AC da...  */
+}
+.output{
+    grid-column: 1/-1;  /*si saxan ayaa loo buuxina = iyo AC da...  */
+    background-color: rgba(0, 0, 0, .75);   /*background color oo wato outputka...  */
+    display: flex;      /*u ogolaanee in qoraal lagu dhex qoro */
+
+    flex-direction: column;      /*in qoraalka outputka 2da xabo lagadhigo si column ahaan ah...  */
+    align-items: flex-end;    /*in lagu soo muujiyo dhamaadka ama geeska danbe... */
+    justify-content: space-around;
+
+
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+
+
+}
+.output .previous-operand{
+    font-size: 1.5rem;  
+    color: rgba(255, 255, 255, .75);  /*colorka farta ouputka kore */
+}
+.output .current-operand{
+   
+    color: white;
+    font-size: 2.5rem;
+}
